@@ -1,5 +1,5 @@
 # Zen Spectre Console Extensions
-[![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Current Version](https://img.shields.io/badge/Version-1.0.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#100---2021-06-13)
+[![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Current Version](https://img.shields.io/badge/Version-1.0.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#100---2021-06-12)
 
 # Overview
 
