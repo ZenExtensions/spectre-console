@@ -15,7 +15,7 @@
     <Company>WajahatAliAbid</Company>
     <Description>DI extensions for Spectre Console</Description>
     <RepositoryUrl>https://github.com/WajahatAliAbid/zen-spectreconsole-extensions</RepositoryUrl>
-    <PackageId>Zen.CliFx.Extensions</PackageId>
+    <PackageId>Zen.SpectreConsole.Extensions</PackageId>
   </PropertyGroup>
 
   <PropertyGroup>
