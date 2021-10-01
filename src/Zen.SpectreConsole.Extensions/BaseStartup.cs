@@ -7,10 +7,12 @@ namespace Zen.SpectreConsole.Extensions
 {
     public abstract class BaseStartup
     {
-        internal IServiceCollection Configure()
+        internal IServiceCollection Configure(string[] args = default)
         {
+            args = args ?? new string[0];
             var services = new ServiceCollection();
             var configurationBuilder = new ConfigurationBuilder()
+                .AddCommandLine(args)
                 .AddEnvironmentVariables()
                 .AddJsonFile("appsettings.json", optional: true);
             ConfigureAppConfiguration(configurationBuilder);
@@ -23,7 +25,5 @@ namespace Zen.SpectreConsole.Extensions
         {
         }
         public abstract void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration);
-
-        public abstract void ConfigureCommandApp(in IConfigurator configurator);
     }
 }

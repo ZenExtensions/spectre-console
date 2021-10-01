@@ -1,5 +1,5 @@
 # Zen Spectre Console Extensions
-[![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Current Version](https://img.shields.io/badge/Version-1.1.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#110---2021-06-28)
+[![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Current Version](https://img.shields.io/badge/Version-1.2.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#120---2021-10-02)
 
 # Overview
 
@@ -25,7 +25,13 @@ public class Startup : BaseStartup
     public override void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
     {
     }
+}
+```
 
+### 2. Create Spectre Configurator
+```csharp
+public class SpectreConfiguration : ISpectreConfiguration
+{
     public override void ConfigureCommandApp(in IConfigurator configurator)
     {
     }
@@ -40,7 +46,9 @@ using System.Threading.Tasks;
 class Program
 {
     public static async Task<int> Main(string[] args) => 
-        await SpectreConsoleHost.WithStartup<Startup>()
+        await SpectreConsoleHost
+            .WithStartup<Startup>()
+            .UseConfigurator<SpectreConfiguration>()
             .RunAsync(args);
         
 }
@@ -62,17 +70,12 @@ public class MainCommand : Command
 
 ### 4. Register command with application
 ```csharp
-public class Startup : BaseStartup
+public class SpectreConfiguration : ISpectreConfiguration
 {
-    public override void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
-    {
-    }
-
-    public override void ConfigureCommandApp(Action<IConfigurator> options)
+    public override void ConfigureCommandApp(in IConfigurator configurator)
     {
         configurator.AddCommand<MainCommand>("main")
             .WithDescription("Displays hello world");
-        
     }
 }
 ```

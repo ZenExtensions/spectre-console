@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-10-02
+
+### Added
+
+- Added args passing to the startup class
+- Added separate ICommandConfigurator interface to work with configuring commandapp
+
+### Removed
+
+- Removed ConfigureCommandApp from BaseStartup
+
 ## [1.1.0] - 2021-06-28
 
 ### Updated
@@ -23,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added type registrar and type resolver for DI
 - Added ConfigureCommandApp function for configuring commands 
 
-[Unreleased]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/releases/tag/1.0.0

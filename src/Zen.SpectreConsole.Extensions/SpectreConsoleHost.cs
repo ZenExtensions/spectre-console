@@ -11,17 +11,23 @@ namespace Zen.SpectreConsole.Extensions
         {
             this.app = app;
         }
-        public static SpectreConsoleHost WithStartup<TStartup>() where TStartup : BaseStartup, new()
+        public static SpectreConsoleHost WithStartup<TStartup>(string[] args = default) where TStartup : BaseStartup, new()
         {
             TStartup startup = new TStartup();
-            var services = startup.Configure();
+            var services = startup.Configure(args);
             var registrar = new TypeRegistrar(services);
             var app = new CommandApp(registrar);
+            return new SpectreConsoleHost(app);
+        }
+
+        public SpectreConsoleHost UseConfigurator<TConfigurator>() where TConfigurator : class, ISpectreConfiguration, new()
+        {
+            TConfigurator configurator = new TConfigurator();
             app.Configure(options => 
             {
-                startup.ConfigureCommandApp(in options);
+                configurator.ConfigureCommandApp(in options);
             });
-            return new SpectreConsoleHost(app);
+            return this;
         }
 
         public Task<int> RunAsync(string[] args)
