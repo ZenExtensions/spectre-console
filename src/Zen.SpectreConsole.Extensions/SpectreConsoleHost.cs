@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Spectre.Console.Cli;
+using Zen.Host;
 using Zen.SpectreConsole.Extensions.Infrastructure;
 
 namespace Zen.SpectreConsole.Extensions
@@ -13,8 +14,7 @@ namespace Zen.SpectreConsole.Extensions
         }
         public static SpectreConsoleHost WithStartup<TStartup>(string[] args = default) where TStartup : BaseStartup, new()
         {
-            TStartup startup = new TStartup();
-            var services = startup.Configure(args);
+            var services= StartupUtil.GetServiceCollectionFrom<TStartup>(args);
             var registrar = new TypeRegistrar(services);
             var app = new CommandApp(registrar);
             return new SpectreConsoleHost(app);

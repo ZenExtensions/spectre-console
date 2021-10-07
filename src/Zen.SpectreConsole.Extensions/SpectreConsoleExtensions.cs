@@ -1,5 +1,4 @@
 using Spectre.Console.Cli;
-using Zen.SpectreConsole.Extensions.Infrastructure;
 
 namespace Zen.SpectreConsole.Extensions
 {
