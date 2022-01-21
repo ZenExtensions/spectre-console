@@ -1,5 +1,5 @@
 # Zen Spectre Console Extensions
-[![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Current Version](https://img.shields.io/badge/Version-1.4.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#140---2021-12-10)
+[![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Current Version](https://img.shields.io/badge/Version-1.5.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#150---2022-01-22)
 
 # Overview
 
@@ -47,6 +47,21 @@ class Program
 {
     public static async Task<int> Main(string[] args) => 
         await SpectreConsoleHost
+            .WithStartup<Startup>()
+            .UseConfigurator<SpectreConfiguration>()
+            .RunAsync(args);
+        
+}
+```
+You can also have a default command using generic SpectreConsoleHost.
+```csharp
+using Zen.SpectreConsole.Extensions;
+using System.Threading.Tasks;
+
+class Program
+{
+    public static async Task<int> Main(string[] args) => 
+        await SpectreConsoleHost<MainCommand>
             .WithStartup<Startup>()
             .UseConfigurator<SpectreConfiguration>()
             .RunAsync(args);
