@@ -54,7 +54,7 @@ namespace ZenExtensions.Spectre.Console.Integration
         Task<List<T>> MultiSelectionPromptAsync<T>(string prompt, IEnumerable<T> choices, CancellationToken cancellationToken = default) where T : notnull;
         Task<T> SingleSelectionPromptAsync<T>(string prompt, IEnumerable<T> choices, CancellationToken cancellationToken = default) where T : notnull;
     }
-    public interface ITerminal
+    public interface ITerminal : IZenConsoleTerminal, IAnsiConsoleTerminal
     {
         
     }
