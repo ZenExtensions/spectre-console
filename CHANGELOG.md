@@ -7,21 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - 2021-06-12
+## [1.0.0] - 2023-02-15
 
 ### Added
+- Added CliHost, ZenCommand and DI integrations
+- Added Terminal class to work with console
 
-- Added SpectreConsoleHost class for working with SpectreConsole
-- Added Startup class for configuring DI
-- Added extension functions for spectre console
-- Added type registrar and type resolver for DI
-- Added ConfigureCommandApp function for configuring commands 
-
-[Unreleased]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.5.0...HEAD
-[1.5.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.4.0...1.5.0
-[1.4.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.3.1...1.4.0
-[1.3.1]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.3.0...1.3.1
-[1.3.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.2.0...1.3.0
-[1.2.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.1.0...1.2.0
-[1.1.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/compare/1.0.0...1.1.0
-[1.0.0]: https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/releases/tag/1.0.0
+[Unreleased]: https://github.com/ZenExtensions/spectre-console/compare/1.1.0...HEAD
+[1.0.0]: https://github.com/ZenExtensions/spectre-console/releases/tag/1.0.0

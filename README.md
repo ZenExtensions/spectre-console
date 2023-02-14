@@ -1,5 +1,5 @@
 # Zen Spectre Console Extensions
-[![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/ZenExtensions/spectre-console/actions) [![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/ZenExtensions/spectre-console/actions) [![Current Version](https://img.shields.io/badge/Version-1.5.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#150---2022-01-22)
+[![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/ZenExtensions/spectre-console/actions) [![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/ZenExtensions/spectre-console/actions) [![Current Version](https://img.shields.io/badge/Version-1.5.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#100---2023-02-15)
 
 # Overview
 
@@ -18,22 +18,18 @@ Use the following steps to configure Zen Spectre Console Extensions. Please refe
 
 ### 1. Create Startup Class
 ```csharp
-using Zen.Host;
+using ZenExtensions.Spectre.Console;
 
 public class Startup : BaseStartup
 {
-    public override void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
+    public abstract void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment hostingEnvironment)
     {
-    }
-}
-```
 
-### 2. Create Spectre Configurator
-```csharp
-public class SpectreConfiguration : ISpectreConfiguration
-{
-    public override void ConfigureCommandApp(in IConfigurator configurator)
+    }
+
+    public override void ConfigureCommands(in IConfigurator configurator)
     {
+
     }
 }
 ```
@@ -45,12 +41,8 @@ using System.Threading.Tasks;
 
 class Program
 {
-    public static async Task<int> Main(string[] args) => 
-        await SpectreConsoleHost
-            .WithStartup<Startup>()
-            .UseConfigurator<SpectreConfiguration>()
-            .RunAsync(args);
-        
+    public static Task<int> Main(string[] args) => 
+        CliHost.RunAsync<Startup>(args);
 }
 ```
 You can also have a default command using generic SpectreConsoleHost.
@@ -60,11 +52,8 @@ using System.Threading.Tasks;
 
 class Program
 {
-    public static async Task<int> Main(string[] args) => 
-        await SpectreConsoleHost<MainCommand>
-            .WithStartup<Startup>()
-            .UseConfigurator<SpectreConfiguration>()
-            .RunAsync(args);
+    public static Task<int> RunWithMainCommandAsync(string[] args) => 
+        CliHost.RunAsync<Startup>(args);
         
 }
 ```
@@ -73,56 +62,37 @@ class Program
 ```csharp
 using Spectre.Console;
 using Spectre.Console.Cli;
-public class MainCommand : Command
+using ZenExtensions.Spectre.Console;
+public class MainCommand : ZenCommand
 {
-    public override int Execute(CommandContext context)
+    public override void OnExecute(CommandContext context, CancellationToken cancellationToken)
     {
-        AnsiConsole.WriteLine("Hello World");
-        return 0;
+        Terminal.WriteLine("Hello World");
     }
 }
 ```
 
 ### 4. Register command with application
 ```csharp
-public class SpectreConfiguration : ISpectreConfiguration
+using ZenExtensions.Spectre.Console;
+
+public class Startup : BaseStartup
 {
-    public override void ConfigureCommandApp(in IConfigurator configurator)
+    public abstract void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment hostingEnvironment)
+    {
+
+    }
+
+    public override void ConfigureCommands(in IConfigurator configurator)
     {
         configurator.AddCommand<MainCommand>("main")
             .WithDescription("Displays hello world");
     }
 }
 ```
-
-### 5. Register Command Setting in DI
-```csharp
-public class Startup : BaseStartup
-{
-    public override void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
-    {
-        services.RegisterCommandSettingFromAssembly(Assembly.GetExecutingAssembly());
-    }
-    public override int Execute(CommandContext context)
-    {
-        AnsiConsole.WriteLine("Hello World");
-        return 0;
-    }
-}
-```
-### 6. Run the command
+### 5. Run the command
 Run the command by using dotnet cli
 ```bash
 > dotnet run main
 Hello World
-```
-
-## Additional options
-You can load configurations from a json file by just adding a file appsettings.json file and adding it to csproj file like following
-```xml
-<ItemGroup>
-    <None Update="appsettings.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-</ItemGroup>
 ```
