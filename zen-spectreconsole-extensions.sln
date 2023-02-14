@@ -5,7 +5,7 @@ VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1F519A3-D85D-4861-8030-176AAAF3FA82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zen.SpectreConsole.Extensions", "src\Zen.SpectreConsole.Extensions\Zen.SpectreConsole.Extensions.csproj", "{9505B660-B25E-4D80-95AF-D3DF5198F67D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenExtensions.Spectre.Console", "src\ZenExtensions.Spectre.Console\ZenExtensions.Spectre.Console.csproj", "{9505B660-B25E-4D80-95AF-D3DF5198F67D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 using Spectre.Console.Cli;
 
-namespace Zen.SpectreConsole.Extensions.Infrastructure
+namespace ZenExtensions.Spectre.Console.DependencyInjection
 {
     internal sealed class TypeRegistrar : ITypeRegistrar
     {

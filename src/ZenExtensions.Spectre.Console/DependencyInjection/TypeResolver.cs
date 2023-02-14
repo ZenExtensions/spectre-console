@@ -2,7 +2,7 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 using Spectre.Console.Cli;
 
-namespace Zen.SpectreConsole.Extensions.Infrastructure
+namespace ZenExtensions.Spectre.Console.DependencyInjection
 {
     internal sealed class TypeResolver : ITypeResolver, IDisposable
     {
@@ -13,8 +13,9 @@ namespace Zen.SpectreConsole.Extensions.Infrastructure
             _provider = provider ?? throw new ArgumentNullException(nameof(provider));
         }
 
-        public object Resolve(Type type)
+        public object? Resolve(Type? type)
         {
+            ArgumentNullException.ThrowIfNull(type);
             return _provider.GetRequiredService(type);
         }
 
