@@ -29,6 +29,6 @@ jobs:
       - name: Test with dotnet
         run: dotnet test
       - name: Generate nuget package
-        run: dotnet pack src/ZenExtensions.Slack.Models -c Release -o output -p:Version=${{ env.RELEASE_VERSION }} -p:Author=${{ env.TAG_USER_NAME }}
+        run: dotnet pack src/ZenExtensions.Spectre.Console -c Release -o output -p:Version=${{ env.RELEASE_VERSION }} -p:Author=${{ env.TAG_USER_NAME }}
       - name: Publish github package
         run: dotnet nuget push output/*.nupkg --api-key ${{ secrets.ORG_PACKAGES_PUBLISH_TOKEN }} --source ${{ secrets.NUGET_PACKAGES_SOURCE }}
