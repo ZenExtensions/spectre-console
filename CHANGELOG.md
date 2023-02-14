@@ -7,22 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.3.0] - 2023-02-15
-
-### Fixed
-
-- Fix return code for async command
-
-## [1.2.0] - 2023-02-15
-
-### Fixed
-
-- Fixed command settings not instantiating
-
 ## [1.1.0] - 2023-02-15
 
 ### Fixed
 
+- Fixed command settings null
+- Fix return code for async command
+- Fixed command settings not instantiating
 - Fixed terminal functions not exposing
 
 ## [1.0.0] - 2023-02-15

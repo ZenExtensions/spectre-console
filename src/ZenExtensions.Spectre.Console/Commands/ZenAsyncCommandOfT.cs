@@ -14,9 +14,10 @@ namespace ZenExtensions.Spectre.Console
         protected TSettings Settings { get; private set; } = default!;
         protected ITerminal Terminal { get; private set; } = default!;
 
-        public override async Task<int> ExecuteAsync([NotNull] CommandContext context, [NotNull] TSettings settings)
+        public override sealed async Task<int> ExecuteAsync([NotNull] CommandContext context, [NotNull] TSettings settings)
         {
             Terminal = new Terminal();
+            Settings = settings;
             var cancellationTokenSource = new CancellationTokenSource();
             System.Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs args)
             {
