@@ -22,8 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added CliHost, ZenCommand and DI integrations
 - Added Terminal class to work with console
 
-[Unreleased]: https://github.com/ZenExtensions/spectre-console/compare/1.3.0...HEAD
-[1.3.0]: https://github.com/ZenExtensions/spectre-console/compare/1.2.0...1.3.0
-[1.2.0]: https://github.com/ZenExtensions/spectre-console/compare/1.1.0...1.2.0
+[Unreleased]: https://github.com/ZenExtensions/spectre-console/compare/1.1.0...HEAD
 [1.1.0]: https://github.com/ZenExtensions/spectre-console/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/ZenExtensions/spectre-console/releases/tag/1.0.0
