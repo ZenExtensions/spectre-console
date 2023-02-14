@@ -21,7 +21,7 @@ jobs:
           echo "User name is ${TAG_USER_NAME}"
           echo "TAG_USER_NAME=${TAG_USER_NAME}" >> $GITHUB_ENV
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.x.x
       - name: Build with dotnet
