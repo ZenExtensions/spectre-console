@@ -9,7 +9,7 @@ using ZenExtensions.Spectre.Console.Integration;
 namespace ZenExtensions.Spectre.Console
 {
     public abstract class ZenCommand<TSettings> : Command<TSettings>, IZenCommand
-        where TSettings: CommandSettings
+        where TSettings: ZenCommandSettings
     {
         protected TSettings Settings { get; private set; } = default!;
         protected ITerminal Terminal { get; private set; } = default!;

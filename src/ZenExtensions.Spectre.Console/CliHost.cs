@@ -60,7 +60,7 @@ namespace ZenExtensions.Spectre.Console
             where TStartup : BaseStartup
         {
             var services = startup.GetServiceCollectionFrom(appName: appName, args);
-            services.AddSingleton<CommandSettings>();
+            services.AddSingleton<ZenCommandSettings>();
             var registrar = new TypeRegistrar(services);
             return registrar;
         }

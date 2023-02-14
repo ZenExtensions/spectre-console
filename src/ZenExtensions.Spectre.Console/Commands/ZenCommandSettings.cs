@@ -6,7 +6,7 @@ using Spectre.Console.Cli;
 
 namespace ZenExtensions.Spectre.Console
 {
-    public abstract class ZenCommand : ZenCommand<ZenCommandSettings>
+    public class ZenCommandSettings : CommandSettings
     {
         
     }
