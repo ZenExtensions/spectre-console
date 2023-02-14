@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Spectre.Console.Cli;
 using Zen.Host;
-using Zen.SpectreConsole.Extensions.Infrastructure;
+using ZenExtensions.Spectre.Console.Infrastructure;
 
-namespace Zen.SpectreConsole.Extensions
+namespace ZenExtensions.Spectre.Console
 {
     public class SpectreConsoleHost<TCommand>
         where TCommand : class, ICommand

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Spectre.Console.Cli;
 
-namespace Zen.SpectreConsole.Extensions
+namespace ZenExtensions.Spectre.Console
 {
     public static class DependencyInjectionExtensions
     {

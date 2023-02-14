@@ -1,6 +1,6 @@
 using Spectre.Console.Cli;
 
-namespace Zen.SpectreConsole.Extensions
+namespace ZenExtensions.Spectre.Console
 {
     public interface ISpectreConfiguration
     {

@@ -1,16 +1,16 @@
 # Zen Spectre Console Extensions
-[![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Actions Status](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/WajahatAliAbid/zen-spectreconsole-extensions/actions) [![Current Version](https://img.shields.io/badge/Version-1.5.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#150---2022-01-22)
+[![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Build/badge.svg?branch=main)](https://github.com/ZenExtensions/spectre-console/actions) [![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/ZenExtensions/spectre-console/actions) [![Current Version](https://img.shields.io/badge/Version-1.5.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#150---2022-01-22)
 
 # Overview
 
 ## Installing
 You can add the package to your project using dotnet core CLI
 ```bash
-dotnet add package Zen.SpectreConsole.Extensions
+dotnet add package ZenExtensions.Spectre.Console
 ```
 or by package manager console in Visual Studio
 ```bash
-Install-Package Zen.SpectreConsole.Extensions
+Install-Package ZenExtensions.Spectre.Console
 ```
 
 ## Usage
@@ -40,7 +40,7 @@ public class SpectreConfiguration : ISpectreConfiguration
 
 ### 2. Configure Program file
 ```csharp
-using Zen.SpectreConsole.Extensions;
+using ZenExtensions.Spectre.Console;
 using System.Threading.Tasks;
 
 class Program
@@ -55,7 +55,7 @@ class Program
 ```
 You can also have a default command using generic SpectreConsoleHost.
 ```csharp
-using Zen.SpectreConsole.Extensions;
+using ZenExtensions.Spectre.Console;
 using System.Threading.Tasks;
 
 class Program

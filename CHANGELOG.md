@@ -7,47 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.5.0] - 2022-01-22
-
-### Added
-
-- Added Spectre Console Host with default command 
-
-## [1.4.0] - 2021-12-10
-
-### Added
-
-- Added functions to register command setting from assembly
-
-## [1.3.1] - 2021-12-03
-
-### Changed
-
-- Updated dependencies
-
-## [1.3.0] - 2021-10-07
-
-### Changed
-
-- BaseStartup is now part of namespace `Zen.Host`
-
-## [1.2.0] - 2021-10-02
-
-### Added
-
-- Added args passing to the startup class
-- Added separate ICommandConfigurator interface to work with configuring commandapp
-
-### Removed
-
-- Removed ConfigureCommandApp from BaseStartup
-
-## [1.1.0] - 2021-06-28
-
-### Updated
-
-- Updated dependencies
-
 ## [1.0.0] - 2021-06-12
 
 ### Added
