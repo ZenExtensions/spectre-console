@@ -24,7 +24,7 @@ namespace ZenExtensions.Spectre.Console
                 args.Cancel = true;
             }!;
             await OnExecuteAsync(context, cancellationTokenSource.Token);
-            return 1;
+            return 0;
         }
 
         public abstract Task OnExecuteAsync(CommandContext context, CancellationToken cancellationToken);
