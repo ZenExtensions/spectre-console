@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.1] - 2023-02-18
+
+### Changed
+
+- Updated spectre console to 0.46.0
+
 ## [1.4.0] - 2023-02-15
 
 ### Fixed
@@ -22,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added CliHost, ZenCommand and DI integrations
 - Added Terminal class to work with console
 
-[Unreleased]: https://github.com/ZenExtensions/spectre-console/compare/1.4.0...HEAD
+[Unreleased]: https://github.com/ZenExtensions/spectre-console/compare/1.4.1...HEAD
+[1.4.1]: https://github.com/ZenExtensions/spectre-console/compare/1.4.0...1.4.1
 [1.4.0]: https://github.com/ZenExtensions/spectre-console/compare/1.0.0...1.4.0
 [1.0.0]: https://github.com/ZenExtensions/spectre-console/releases/tag/1.0.0

@@ -1,5 +1,5 @@
 # Zen Spectre Console Extensions
-[![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/ZenExtensions/spectre-console/actions) [![Current Version](https://img.shields.io/badge/Version-1.4.0-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#140---2023-02-15)
+[![Actions Status](https://github.com/ZenExtensions/spectre-console/workflows/.NET%20Core%20Publish/badge.svg)](https://github.com/ZenExtensions/spectre-console/actions) [![Current Version](https://img.shields.io/badge/Version-1.4.1-brightgreen?logo=nuget&labelColor=30363D)](./CHANGELOG.md#141---2023-02-18)
 
 # Overview
 
